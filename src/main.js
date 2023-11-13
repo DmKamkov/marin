@@ -13,7 +13,12 @@ import messages from '@intlify/unplugin-vue-i18n/messages'
 
 import './assets/main.css'
 
-const i18n = createI18n({ locale: 'en', messages })
+const i18n = createI18n({
+    locale: 'en',
+    messages,
+    globalInjection: true,
+    legacy: false,
+})
 
 const app = createApp(App)
 const routes = setupLayouts(generatedRoutes);
