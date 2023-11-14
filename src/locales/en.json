@@ -1,4 +1,14 @@
 {
-  "language": "Language",
-  "hello": "hello, world!"
+  "loginForm": {
+    "greetings": "Welcome!",
+    "loginButton": "Log in",
+    "forgotPass": "Forgot password",
+    "rememberMe": "Remember me",
+    "userName": "Email",
+    "passValue": "Password"
+  },
+  "forgotPassForm": {
+    "forgotButton":  "Send a new password to email",
+    "backToLogin": "Return to the login page"
+  }
 }
