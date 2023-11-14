@@ -11,7 +11,7 @@ import 'ant-design-vue/dist/reset.css';
 import App from './App.vue'
 import messages from '@intlify/unplugin-vue-i18n/messages'
 
-import './assets/main.css'
+import './assets/main.scss'
 
 const i18n = createI18n({
     locale: 'en',
