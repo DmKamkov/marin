@@ -5,10 +5,16 @@
     "forgotPass": "Forgot password",
     "rememberMe": "Remember me",
     "userName": "Email",
-    "passValue": "Password"
+    "passValue": "Password",
+    "emailRequired": "Email is a required field",
+    "passwordRequired": "Password is a required field",
+    "emailValid": "Field email must be a valid email",
+    "alertEmail": "Enter email",
+    "alertPassword": "Incorrect email or password"
   },
   "forgotPassForm": {
     "forgotButton":  "Send a new password to email",
-    "backToLogin": "Return to the login page"
+    "backToLogin": "Return to the login page",
+    "sentMessageEmail": "A message with a new password has been sent to your e-mail"
   }
 }

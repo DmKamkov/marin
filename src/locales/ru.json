@@ -5,10 +5,16 @@
     "forgotPass": "Забыл пароль",
     "rememberMe": "Запомнить меня",
     "userName": "Ваш Email",
-    "passValue": "Ваш пароль"
+    "passValue": "Ваш пароль",
+    "emailRequired": "Поле Email обязательное",
+    "passwordRequired": "Поле пароль обязательное",
+    "emailValid": "Поле email должно быть действительным адресом электронной почты",
+    "alertEmail": "Введите Email",
+    "alertPassword": "Неверные Email или пароль"
   },
   "forgotPassForm": {
     "forgotButton":  "Отправить новый пароль на Email",
-    "backToLogin": "Вернуться на страницу входа"
+    "backToLogin": "Вернуться на страницу входа",
+    "sentMessageEmail": "Сообщение с новым паролем отправлено вам на почту"
   }
 }

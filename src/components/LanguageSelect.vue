@@ -5,7 +5,7 @@
     >
         <a-select-option value="ru">Рус</a-select-option>
         <a-select-option value="en">Eng</a-select-option>
-        <a-select-option value="ukr">Укр</a-select-option>
+        <a-select-option value="uk">Укр</a-select-option>
     </a-select>
 </template>
 
