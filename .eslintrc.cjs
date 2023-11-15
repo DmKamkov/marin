@@ -10,5 +10,9 @@ module.exports = {
   ],
   parserOptions: {
     ecmaVersion: 'latest'
-  }
+  },
+  rules: {
+    'indent': ['error', 2, { 'SwitchCase': 1 }],
+    'no-console': 'error',
+  },
 }

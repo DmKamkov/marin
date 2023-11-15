@@ -72,7 +72,7 @@ export default defineComponent({
 })
 </script>
 
-<style>
+<style lang="scss">
 .login-button {
   width: 100%;
   background: linear-gradient(#22A1FC, #2EE8A8);
