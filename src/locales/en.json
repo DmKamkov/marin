@@ -16,5 +16,10 @@
     "forgotButton":  "Send a new password to email",
     "backToLogin": "Return to the login page",
     "sentMessageEmail": "A message with a new password has been sent to your e-mail"
+  },
+  "sidebar": {
+    "vacancies": "Actual vacancies",
+    "handbooks": "Handbooks",
+    "matrices": "Matrices"
   }
 }

@@ -1,7 +1,13 @@
 <template>
-    <main>
-        <router-view />
-    </main>
+    <a-layout class="main-layout">
+        <HeaderMain />
+        <a-layout>
+            <SidebarMain />
+            <a-layout-content>
+                <router-view />
+            </a-layout-content>
+        </a-layout>
+    </a-layout>
 </template>
 
 <script>
@@ -11,4 +17,8 @@ export default defineComponent({
 })
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.main-layout {
+    height: 100vh;
+}
+</style>

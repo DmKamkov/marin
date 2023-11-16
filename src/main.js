@@ -7,6 +7,7 @@ import { createI18n } from 'vue-i18n'
 import { createRouter, createWebHistory } from 'vue-router';
 import Antd from 'ant-design-vue';
 import 'ant-design-vue/dist/reset.css';
+import * as AntIcons from '@ant-design/icons-vue';
 
 import App from './App.vue'
 import messages from '@intlify/unplugin-vue-i18n/messages'
@@ -25,6 +26,10 @@ const routes = setupLayouts(generatedRoutes);
 const router = createRouter({
     history: createWebHistory(),
     routes,
+});
+
+Object.keys(AntIcons).forEach((key) => {
+    app.component(key, AntIcons[key]);
 });
 
 app.use(createPinia());
