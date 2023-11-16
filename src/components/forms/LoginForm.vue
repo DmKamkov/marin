@@ -94,7 +94,7 @@ export default defineComponent({
 <style lang="scss">
 .login-button {
   width: 100%;
-  background: linear-gradient(#22A1FC, #2EE8A8);
+  background: linear-gradient(to bottom right, #22A1FC, #2EE8A8);
   color: #fff;
   font-weight: 500;
   margin-top: 20px;

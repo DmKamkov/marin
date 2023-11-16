@@ -45,7 +45,7 @@
             font-family: 'Roboto', sans-serif;
             font-size: 64px;
             font-weight: 700;
-            margin-top: 30%;
+            margin-top: 150px;
             text-align: left;
             white-space: normal;
             width: 80%;
