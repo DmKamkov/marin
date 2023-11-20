@@ -32,7 +32,7 @@
 </template>
 
 <script>
-import {defineComponent, reactive, onMounted, ref} from 'vue'
+import {defineComponent, ref} from 'vue'
 import { UserOutlined, LockOutlined } from '@ant-design/icons-vue'
 import * as yup from 'yup'
 import { useForm } from 'vee-validate'
@@ -45,8 +45,8 @@ export default defineComponent({
   },
   props: {
     userEmail: {
-      type: String,
-      default: ''
+      type: Object,
+      default: () => ({})
     }
   },
   emits: ['return'],
@@ -63,7 +63,7 @@ export default defineComponent({
           email: props.userEmail.value,
         },
       });
-    
+
     const antConfig = (state) => ({ 
       model: 'value',
       props: {

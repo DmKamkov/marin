@@ -43,6 +43,7 @@ import { UserOutlined, LockOutlined } from '@ant-design/icons-vue'
 import * as yup from 'yup'
 import { useForm } from 'vee-validate'
 import { useI18n } from 'vue-i18n'
+import { useRouter } from 'vue-router'
 
 export default defineComponent({
   components: {
@@ -51,6 +52,7 @@ export default defineComponent({
   },
   emits: ['forget-password'],
   setup() {
+    const router = useRouter()
     const { t } = useI18n()
     const schema = yup.object({
       email: yup.string().required(() => t("loginForm.emailRequired")).email(() => t("loginForm.emailValid")),
@@ -77,6 +79,7 @@ export default defineComponent({
 
     const onSubmit = handleSubmit((values) => {
       console.log('Submitted with', values);
+      router.push('/current-vacancies')
     });
 
     return {

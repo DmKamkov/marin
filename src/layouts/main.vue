@@ -1,6 +1,6 @@
 <template>
-    <a-layout class="main-layout">
-        <HeaderMain />
+    <a-layout>
+        <HeaderMain class="main-layout__header" />
         <a-layout>
             <SidebarMain />
             <a-layout-content>
@@ -18,7 +18,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-.main-layout {
-    height: 100vh;
+.main-layout__header {
+    display: fixed;
 }
 </style>
