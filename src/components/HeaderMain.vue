@@ -1,5 +1,8 @@
 <template>
-    <a-layout-header class="header-main">
+    <a-layout-header
+        :style="{ position: 'fixed', zIndex: 99, width: '100%' }"
+        class="header-main"
+    >
         <img
             src="@/assets/logo.svg"
             class="header-main__logo"

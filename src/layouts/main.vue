@@ -1,9 +1,15 @@
 <template>
-    <a-layout>
-        <HeaderMain class="main-layout__header" />
+    <a-layout class="main-layout">
+        <HeaderMain />
         <a-layout>
-            <SidebarMain />
-            <a-layout-content>
+            <SidebarMain :isCollapsed="collapsed" @update:isCollapsed="handleSidebarCollapse" />
+            <a-layout-content
+                :style="{
+                    marginLeft: collapsed ? '80px' : '280px',
+                    transition: 'margin-left 0.2s ease',
+                    marginTop: '72px',
+                }"
+            >
                 <router-view />
             </a-layout-content>
         </a-layout>
@@ -11,14 +17,26 @@
 </template>
 
 <script>
-import { defineComponent } from 'vue'
+import { ref } from 'vue'
 
-export default defineComponent({
-})
+export default {
+    setup() {
+        const collapsed = ref(false);
+
+        const handleSidebarCollapse = (value) => {
+            collapsed.value = value;
+        };
+
+        return {
+            collapsed,
+            handleSidebarCollapse,
+        };
+    },
+}
 </script>
 
 <style lang="scss" scoped>
-.main-layout__header {
-    display: fixed;
+.main-layout {
+    min-height: 100vh;
 }
 </style>
