@@ -1,7 +1,7 @@
 <template>
-  <div>
-    <router-view />
-  </div>
+    <div>
+        <router-view />
+    </div>
 </template>
 
 <script>
@@ -9,8 +9,8 @@
 
 <style lang="scss">
 #app {
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  text-align: center;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    text-align: center;
 }
 </style>

@@ -1,34 +1,34 @@
 <template>
-  <a-form
-    @submit="onSubmit"
-  >
-    <a-form-item :wrapper-col="{ offset: 7, span: 10 }" v-bind="email">
-      <a-input size="large" v-bind="email" :placeholder="$t('loginForm.userName')">
-        <template #prefix><UserOutlined style="color: #22A1FC" /></template>
-      </a-input>
-    </a-form-item>
-    <a-form-item :wrapper-col="{ offset: 7, span: 10 }">
-      <a-button
-        type="primary"
-        html-type="submit"
-        :disabled="email.value === ''"
-        class="forgot-button"
-        size="large"
-      >
-        {{ $t('forgotPassForm.forgotButton') }}
-      </a-button>
-    </a-form-item>
-    <a-form-item :wrapper-col="{ offset: 7, span: 10 }">
-      <span style="color:#22A1FC; cursor: pointer; font-size: 16px" @click="$emit('return', { email: '', forgot: false })">
-        {{ $t('forgotPassForm.backToLogin') }}
-      </span>
-    </a-form-item>
-  </a-form>
-  <div class="forgot-password__notification">
-    <transition name="slide-fade">
-      <a-alert :message="$t('forgotPassForm.sentMessageEmail')" v-if="isSentMessage" type="success" show-icon />
-    </transition>
-  </div>
+    <a-form
+        @submit="onSubmit"
+    >
+        <a-form-item :wrapper-col="{ offset: 7, span: 10 }" v-bind="email">
+            <a-input size="large" v-bind="email" :placeholder="$t('loginForm.userName')">
+                <template #prefix><UserOutlined style="color: #22A1FC" /></template>
+            </a-input>
+        </a-form-item>
+        <a-form-item :wrapper-col="{ offset: 7, span: 10 }">
+            <a-button
+                type="primary"
+                html-type="submit"
+                :disabled="email.value === ''"
+                class="forgot-button"
+                size="large"
+            >
+                {{ $t('forgotPassForm.forgotButton') }}
+            </a-button>
+        </a-form-item>
+        <a-form-item :wrapper-col="{ offset: 7, span: 10 }">
+            <span style="color:#22A1FC; cursor: pointer; font-size: 16px" @click="$emit('return', { email: '', forgot: false })">
+                {{ $t('forgotPassForm.backToLogin') }}
+            </span>
+        </a-form-item>
+    </a-form>
+    <div class="forgot-password__notification">
+        <transition name="slide-fade">
+            <a-alert :message="$t('forgotPassForm.sentMessageEmail')" v-if="isSentMessage" type="success" show-icon />
+        </transition>
+    </div>
 </template>
 
 <script>

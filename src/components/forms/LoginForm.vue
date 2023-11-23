@@ -1,40 +1,40 @@
 <template>
-  <a-form
-    :label-col="{ span: 2 }"
-    @submit="onSubmit"
-  >
-    <a-form-item :wrapper-col="{ offset: 7, span: 10 }" v-bind="email" class="login__email-box">
-      <a-input size="large" v-bind="email" :placeholder="$t('loginForm.userName')" type="email">
-        <template #prefix><UserOutlined style="color: #22A1FC" /></template>
-      </a-input>
-      <a-alert v-if="isWrongEmail" type="error" :message="$t('loginForm.alertEmail')" banner style="background: none;" />
-    </a-form-item>
-    <a-form-item :wrapper-col="{ offset: 7, span: 10 }" v-bind="password" class="login__password-box">
-      <a-input-password size="large" v-bind="password" type="password" :placeholder="$t('loginForm.passValue')">
-        <template #prefix><LockOutlined style="color: #22A1FC" /></template>
-      </a-input-password>
-      <a-alert v-if="isWrongEmailOrPassword" type="error" :message="$t('loginForm.alertPassword')" banner style="background: none;" />
-    </a-form-item>
-    <a-form-item name="remember" :wrapper-col="{ offset: 7, span: 10 }">
-      <div class="login-items">
-        <a-checkbox v-model:checked="checked">{{ $t('loginForm.rememberMe') }}</a-checkbox>
-        <span @click="$emit('forget-password', {email: email, forgot: true })" style="color:#22A1FC; cursor: pointer; font-size: 16px">
-          {{ $t('loginForm.forgotPass') }}
-        </span>
-      </div>
-    </a-form-item>
-    <a-form-item :wrapper-col="{ offset: 7, span: 10 }">
-      <a-button
-        type="primary"
-        html-type="submit"
-        :disabled="email === '' || password === ''"
-        class="login-button"
-        size="large"
-      >
-      {{ $t('loginForm.loginButton') }}
-      </a-button>
-    </a-form-item>
-  </a-form>
+    <a-form
+        :label-col="{ span: 2 }"
+        @submit="onSubmit"
+    >
+        <a-form-item :wrapper-col="{ offset: 7, span: 10 }" v-bind="email" class="login__email-box">
+            <a-input size="large" v-bind="email" :placeholder="$t('loginForm.userName')" type="email">
+                <template #prefix><UserOutlined style="color: #22A1FC" /></template>
+            </a-input>
+            <a-alert v-if="isWrongEmail" type="error" :message="$t('loginForm.alertEmail')" banner style="background: none;" />
+        </a-form-item>
+        <a-form-item :wrapper-col="{ offset: 7, span: 10 }" v-bind="password" class="login__password-box">
+            <a-input-password size="large" v-bind="password" type="password" :placeholder="$t('loginForm.passValue')">
+                <template #prefix><LockOutlined style="color: #22A1FC" /></template>
+            </a-input-password>
+            <a-alert v-if="isWrongEmailOrPassword" type="error" :message="$t('loginForm.alertPassword')" banner style="background: none;" />
+        </a-form-item>
+        <a-form-item name="remember" :wrapper-col="{ offset: 7, span: 10 }">
+            <div class="login-items">
+                <a-checkbox v-model:checked="checked">{{ $t('loginForm.rememberMe') }}</a-checkbox>
+                <span @click="$emit('forget-password', {email: email, forgot: true })" style="color:#22A1FC; cursor: pointer; font-size: 16px">
+                    {{ $t('loginForm.forgotPass') }}
+                </span>
+            </div>
+        </a-form-item>
+        <a-form-item :wrapper-col="{ offset: 7, span: 10 }">
+            <a-button
+                type="primary"
+                html-type="submit"
+                :disabled="email === '' || password === ''"
+                class="login-button"
+                size="large"
+            >
+                {{ $t('loginForm.loginButton') }}
+            </a-button>
+        </a-form-item>
+    </a-form>
 </template>
 
 <script>
