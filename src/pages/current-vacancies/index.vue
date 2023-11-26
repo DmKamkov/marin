@@ -13,10 +13,8 @@
     <div class="vacancies__table">
       <div class="vacancies__table-toolbar">
         <a-input-search
-          v-model:value="searchValue"
           placeholder="Введите текст"
           style="width: 20%"
-          @search="onSearch"
         />
         <a-button :disabled="addNewVacancy" class="vacancies__table-button" type="primary" v-if="!selectedRows.length" @click="addNewVacancy = true">
           <template #icon>
@@ -39,7 +37,14 @@
           </a-button>
         </div>  
       </div>
-      <a-table bordered sticky :pagination="false" :columns="columns" :data-source="data" :row-selection="rowSelection" :row-class-name="(_record, index) => tableRowHandle(_record)">
+      <a-table
+        bordered sticky
+        :pagination="false"
+        :columns="columns"
+        :data-source="data"
+        :row-selection="rowSelection"
+        :row-class-name="(_record, index) => tableRowHandle(_record)"
+      >
         <template #summary v-if="addNewVacancy">
           <a-table-summary fixed="top">
             <a-table-summary-row>
@@ -112,12 +117,16 @@
           </template>
         </template>
       </a-table>
+      <div class="infinite-scroll_spin">
+        <a-spin v-if="isLoading" />
+      </div>
+      <InfiniteScroll @intersect="fetchDataTable" />
     </div>
   </div>
 </template>
 
 <script>
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 import mockTable from './mock-table'
 
 export default {
@@ -159,7 +168,8 @@ export default {
           title: 'DOC',
           dataIndex: 'doc',
           key: 'doc',
-          filters: []
+          filters: [],
+          width: '5%'
         },
         {
           title: 'Remark',
@@ -185,8 +195,9 @@ export default {
           key: 'actions',
         },
       ]);
-      const data = ref(mockTable);
-      const addNewVacancy = ref(false)
+      const data = ref([]);
+      const addNewVacancy = ref(false);
+      const isLoading = ref(false);
       const selectedRows = ref([]);
       const formAddNewVacancy = ref({
         company: '',
@@ -219,6 +230,14 @@ export default {
         }
       }
 
+      const fetchDataTable = () => {
+        isLoading.value = true
+        setTimeout(() => {
+          data.value.push(...mockTable)
+          isLoading.value = false
+        }, 1000)
+      }
+
       const createNewVacancy = () => {
         addNewVacancy.value = false
         formAddNewVacancy.value = {
@@ -242,19 +261,20 @@ export default {
         } else if (record.actions.idcardOutlined) {
           styleArray.push('vacancies__table-idcard')
         }
-
         return styleArray.join(' ')
       }
 
       return {
         rowSelection,
         data,
+        fetchDataTable,
         columns,
         addNewVacancy,
         tableRowHandle,
         selectedRows,
         removeNewForm,
         createNewVacancy,
+        isLoading,
         formAddNewVacancy
       }
   }
@@ -341,9 +361,20 @@ export default {
       }
     }
 
+    .ant-table-filter-column {
+      font-weight: 500;
+    }
+
     .ant-table-row {
       height: 32px !important;
     }
   }
+}
+.infinite-scroll_spin {
+  display: flex;
+  width: 100%;
+  height: 60px;
+  justify-content: center;
+  align-items: center;
 }
 </style>

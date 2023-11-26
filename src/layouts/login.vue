@@ -66,6 +66,10 @@
         flex-direction: column;
         gap: 90px;
         padding: 75px;
+        &-logo {
+            display: flex;
+            justify-content: center;
+        }
     }
 
     &__wrapper {
