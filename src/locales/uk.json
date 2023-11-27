@@ -21,5 +21,13 @@
     "vacancies": "Актуальні вакансії",
     "handbooks": "Довідники",
     "matrices": "Матриці"
+  },
+  "positions": {
+    "tableHead": {
+      "position": "Посада",
+      "stcw": "STCW",
+      "department": "Департамент",
+      "abbreviation": "Скорочення"
+    }
   }
 }

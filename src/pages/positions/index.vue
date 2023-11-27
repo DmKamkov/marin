@@ -25,35 +25,53 @@
 </template>
 
 <script>
+import { ref, watch } from 'vue';
+import { useI18n } from 'vue-i18n';
+
 export default {
     setup() {
-        const columns = [
-            {
-                title: 'Name',
-                dataIndex: 'name',
-                sorter: true,
-                width: '20%',
-            },
-            {
-                title: 'Gender',
-                dataIndex: 'gender',
-                filters: [
-                    {
-                        text: 'Male',
-                        value: 'male',
-                    },
-                    {
-                        text: 'Female',
-                        value: 'female',
-                    },
-                ],
-                width: '20%',
-            },
-            {
-                title: 'Email',
-                dataIndex: 'email',
-            },
-        ];
+        const { t, locale  } = useI18n();
+        const columns = ref([]);
+
+        const updateTableData = () => {
+            columns.value = [
+                {
+                    title: t('positions.tableHead.position'),
+                    dataIndex: 'position',
+                    sorter: true,
+                },
+                {
+                    title: t('positions.tableHead.stcw'),
+                    dataIndex: 'stcw',
+                    sorter: true,
+                },
+                {
+                    title: t('positions.tableHead.department'),
+                    dataIndex: 'department',
+                    sorter: true,
+                    filters: [
+                        {
+                            text: 'Griffindor',
+                            value: 'griffindor',
+                        },
+                        {
+                            text: 'Slizeren',
+                            value: 'slizeren',
+                        },
+                    ],
+                },
+                {
+                    title: t('positions.tableHead.abbreviation'),
+                    dataIndex: 'abbreviation',
+                },
+            ];
+        };
+
+        updateTableData();
+
+        watch(() => locale.value, () => {
+            updateTableData();
+        });
 
         return {
             columns,

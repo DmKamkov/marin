@@ -21,5 +21,13 @@
     "vacancies": "Actual vacancies",
     "handbooks": "Handbooks",
     "matrices": "Matrices"
+  },
+  "positions": {
+    "tableHead": {
+      "position": "Position",
+      "stcw": "STCW",
+      "department": "Department",
+      "abbreviation": "Abbreviation"
+    }
   }
 }

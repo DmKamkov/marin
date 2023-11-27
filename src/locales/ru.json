@@ -21,5 +21,13 @@
     "vacancies": "Актуальные вакансии",
     "handbooks": "Справочники",
     "matrices": "Матрицы"
+  },
+  "positions": {
+    "tableHead": {
+      "position": "Должность",
+      "stcw": "STCW",
+      "department": "Департамент",
+      "abbreviation": "Сокращение"
+    }
   }
 }
